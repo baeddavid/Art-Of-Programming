@@ -4,28 +4,37 @@ import "fmt"
 
 // 1.1
 // Given (a, b, c, d) make (b, c, d, a) using the minimum number of swaps
-// Swapped in three moves
+// Swapped in five assignments. Sort of similar to insertion sort bubbling.
 func SwapABCD() {
 	counter := 0
 	a := []byte{'a', 'b', 'c', 'd'}
-	a[0], a[1] = a[1], a[0]
+
+	temp := a[0]
 	counter++
-	fmt.Println("Counter", counter)
 	fmt.Println(a)
-	a[1], a[2] = a[2], a[1]
+	fmt.Println("Counter", counter)
+	a[0] = a[1]
 	counter++
-	fmt.Println("Counter", counter)
 	fmt.Println(a)
-	a[2], a[3] = a[3], a[2]
+	fmt.Println("Counter", counter)
+	a[1] = a[2]
 	counter++
-	fmt.Println("Counter", counter)
 	fmt.Println(a)
+	fmt.Println("Counter", counter)
+	a[2] = a[3]
+	counter++
+	fmt.Println(a)
+	fmt.Println("Counter", counter)
+	a[3] = temp
+	counter++
+	fmt.Println(a)
+	fmt.Println("Counter", counter)
 }
 
 // 1.2
 // Prove that m is always greater than n in E1
 
-// If at any point n < m, than the algorithm breaks because we will always be returned 0. At E0 we fix this by swapping m and n if m > n. Therefore m is always greater that n at E1.
+// m and n are the previous values of n and r. n > r meaning that m is always greater than n.
 
 // 1.3
 // Change algorithm E such that all triviial assignments m <- n are avoided. Call this function F.
@@ -46,3 +55,17 @@ func F(x int, y int) int {
 // What is the greatest common divisor of 2166 and 6099
 
 // Plugging in 2166 and 6099 into our algorithm we get 57
+
+// 1.5
+// Show that the "Procedure for Reading this Set of Books" fails to be a genuine algorithm
+
+// The preface fails in 3 places specifically.
+// 1. It fails to be precisely defined. The preface is very ambiguous about what certain things mean. For example N is not clearly defined. Is it an integer? A float? It is never explicitly stated
+// 2. It does not have any output. An algorithm can take 0 inputs, but it must always output something.
+// 3. It can be argued that the preface fails the efficiency qualifier. Not to say that Knuth work is poor studying material, but the preface's guidelines technically have duplicated work, where the
+// reader can potentially read the same part multiple times if going strictly by the chart.
+
+// 1.6
+// What is T5, the average number of times step E1 is performed when n = 5?
+
+// Plugging n into E we get:
