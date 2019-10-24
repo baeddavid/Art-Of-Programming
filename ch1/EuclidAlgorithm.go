@@ -5,9 +5,15 @@ func E(x int, y int) int {
 		x, y = y, x
 	}
 
-	if x == 0 {
-		return y
+	remainder := x % y
+	x /= y
+	for {
+		if remainder == 0 {
+			return y
+		}
+		x = y
+		y = remainder
+		remainder = x % y
+		x /= y
 	}
-
-	return E(y%x, x)
 }
