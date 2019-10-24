@@ -6,7 +6,6 @@ import (
 )
 
 func main() {
-	r := ch1.E(2166, 5)
+	r := ch1.E(5, 2)
 	fmt.Println(r)
-	ch1.SwapABCD()
 }

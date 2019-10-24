@@ -1,19 +1,18 @@
 package ch1
 
-func E(x int, y int) int {
-	if x > y {
-		x, y = y, x
+func E(m int, n int) int {
+	// E0
+	if n > m {
+		m, n = n, m
 	}
 
-	remainder := x % y
-	x /= y
 	for {
-		if remainder == 0 {
-			return y
+		if n == 0 {
+			return m
 		}
-		x = y
-		y = remainder
-		remainder = x % y
-		x /= y
+		// E1 - E3
+		t := n
+		n = m % n
+		m = t
 	}
 }

@@ -68,4 +68,4 @@ func F(x int, y int) int {
 // 1.6
 // What is T5, the average number of times step E1 is performed when n = 5?
 
-// Plugging n into E we get:
+// Modifying E so that it prints a counter to the console each time E1 is called. We see that plugging in the values of m 1 - 5 we get a value of 2.6.
